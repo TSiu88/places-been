@@ -17,7 +17,7 @@ PlacesVisited.prototype.assignId = function(){
 PlacesVisited.prototype.findPlace = function(id){
   for (var i=0; i<this.places.length; i++){
     if(this.places[i]){
-      if(this.places[i].id ===id){
+      if(this.places[i].id == id){
         return this.places[i];
       }
     }
@@ -28,7 +28,7 @@ PlacesVisited.prototype.findPlace = function(id){
 PlacesVisited.prototype.deletePlace = function(id){
   for (var i=0; i<this.places.length; i++){
     if(this.places[i]){
-      if(this.places[i].id === id){
+      if(this.places[i].id == id){
         delete this.places[i];
         return true;
       }
@@ -54,29 +54,47 @@ function toText(place){
 
 //USER INTERFACE LOGIC
 $(document).ready(function(){
-  $("#placeForm").submit(function(event){
+  var placesVisited = new PlacesVisited();
+  $(".btn").on("click", function(){
+  //$("#placeForm").submit(function(event){
     event.preventDefault();
 
+    var buttonId = this.id;
     var placeName = $("input#placeName").val();
     var landmark = $("#landmarks").val();
     var dates = $("#datesVisited").val();
     var notes = $("#placeNotes").val();
-    var placesVisited = new PlacesVisited();
+    
 
-    if(placeName !== ""){
+    if(placeName !== "" && buttonId === "addPlace"){
       var place1 = new Place(placeName, landmark, dates, notes);
       placesVisited.addPlace(place1);
+      //console.log(placesVisited.places);
 
       $("#output").show();
-      for(var i=0; i<placesVisited.places.length; i++){
-        var textString = toText(placesVisited.places[i]);
-        
-        $("#outputText").append(textString +"<br>");
-      }
+      var button = document.createElement("button");
+      var lastIndex = placesVisited.places.length -1;
+      button.innerHTML = placesVisited.places[lastIndex].placeName;
+      button.id = placesVisited.places[lastIndex].id;
+      button.setAttribute("class", "btn");
+      $("#placeButtons").append(button);
+      
       
     }else{
       alert("Name required. Please enter place name.")
     }
 
+    $(".btn").on("click", function(){
+  
+      var buttonId = this.id;
+      if(buttonId !== "addPlace"){
+        var placeObject = placesVisited.findPlace(buttonId);
+    
+        var textString = toText(placeObject);
+        $("#outputText").text(textString);
+      }
+  
+    });
   });
+
 });
