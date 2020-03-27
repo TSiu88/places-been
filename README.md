@@ -6,28 +6,28 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This was an exercise made for the Epicodus Intro to Programming and C#/React course.  It practiced BDD wiht writing specifications first as well as Javascript objects and object properties_
 
 ## Setup/Installation Requirements
 
 ### Requirements to Run
-* _This is a great place_
-* _to list setup instructions_
 
-### Other Resources Used
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Web Browser_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+### Instructions
 
-## Technologies Used
+*This page may be viewed by:*
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+1. Clone the [repository](https://github.com/TSiu88/my-first-webpage.git) from my [GitHub page](https://github.com/TSiu88)
+2. Open the **index.html** file in any web browser.
 
-## Notable Features
-
-_What makes this project stand out/unique_
+## Other Technologies Used
+* _HTML_
+* _CSS_
+* _Javascript_
+* _JQuery 3.4.1_
+* _Bootstrap 4.4.1_
+* _Markdown_
 
 ## Specification
 
@@ -71,10 +71,10 @@ _What makes this project stand out/unique_
 * The program will remove a place with the input name when click "Remove" button
   * Example Input: "Seattle" -> remove
   * Example Output: no longer shows "Seattle"
-
+  
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_There are currently no known bugs in this program_
 
 ## Support and contact details
 
